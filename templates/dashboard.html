@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Dashboard — {{ name }}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { background: #f0f7f4; }
+    h4, h5 { color: #1a6b4a; }
+    .card  { border: none; border-radius: 16px;
+             box-shadow: 0 4px 16px rgba(0,0,0,0.07); margin-bottom: 20px; }
+    .section-title { color: #1a6b4a; font-weight: 600;
+                     border-left: 4px solid #52b788; padding-left: 10px; }
+    /* ── Metric cards ── */
+    .metric-val   { font-size: 2rem; font-weight: 700; color: #1a6b4a; }
+    .metric-label { font-size: 0.78rem; color: #888; text-transform: uppercase;
+                    letter-spacing: 0.04em; margin-bottom: 4px; }
+    /* ── Tip items ── */
+    .tip-item { padding: 7px 0; border-bottom: 1px solid #e8f5e9; font-size: 0.93rem; }
+    .tip-item:last-child { border-bottom: none; }
+    /* ── Food cards ── */
+    .food-card  { background: #fff; border-radius: 12px; padding: 14px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,0.05); height: 100%; }
+    .food-name  { color: #1a6b4a; font-weight: 600; margin-bottom: 4px; font-size: 0.97rem; }
+    .food-macro { font-size: 0.78rem; color: #666; margin-bottom: 3px; }
+    .food-alt   { font-size: 0.75rem; color: #aaa; }
+    /* ── Feature 4: Workout cards ── */
+    .workout-card { background: #fff; border-radius: 12px; padding: 16px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                    text-align: center; height: 100%;
+                    border-top: 4px solid #52b788; }
+    .workout-name    { font-weight: 600; color: #1a6b4a; font-size: 0.97rem; margin-bottom: 8px; }
+    .workout-cal     { font-size: 1.3rem; font-weight: 700; color: #e05c2a; }
+    .workout-cal-lbl { font-size: 0.72rem; color: #888; }
+    .workout-freq    { display: inline-block; margin-top: 6px;
+                       background: #e8f5e9; color: #1a6b4a;
+                       padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; }
+    /* ── Score bar ── */
+    .score-bar { height: 10px; border-radius: 5px; }
+    /* ── Print ── */
+    @media print {
+      .no-print  { display: none !important; }
+      .card      { box-shadow: none !important; border: 1px solid #ddd !important; }
+      body       { background: #fff !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div style="background:linear-gradient(135deg,#1a6b4a,#52b788);color:#fff;padding:28px 0 20px;text-align:center" class="no-print">
+  <h2 style="font-weight:700;margin:0">🌿 Your Holistic Health Report</h2>
+  <p style="opacity:0.88;margin:4px 0 0">Hello, <strong>{{ name }}</strong> · {{ age }} yrs · {{ gender }}</p>
+</div>
+
+<!-- Risk Banner -->
+<div class="container mt-3">
+  {% if "High" in risk %}
+    <div class="alert alert-danger fw-bold text-center">
+      ⚠️ High Risk Profile Detected — Please follow the recommendations carefully
+    </div>
+  {% elif "Moderate" in risk %}
+    <div class="alert alert-warning fw-bold text-center">
+      ⚡ Moderate Risk — Some lifestyle improvements recommended
+    </div>
+  {% else %}
+    <div class="alert alert-success fw-bold text-center">
+      ✅ Low Risk — Keep maintaining your healthy lifestyle!
+    </div>
+  {% endif %}
+</div>
+
+<div class="container pb-4">
+
+  <!-- ── ROW 1: 5 Metric Cards ── -->
+  <div class="row g-3 mb-2">
+
+    <!-- Health Score -->
+    <div class="col-md col-6">
+      <div class="card p-3 text-center">
+        <div class="metric-label">Health Score</div>
+        <div class="metric-val">{{ health_score }}<span style="font-size:1rem">/100</span></div>
+        <span class="badge bg-{{ score_color }}">{{ score_label }}</span>
+        <div class="progress score-bar mt-2">
+          <div class="progress-bar bg-{{ score_color }}" style="width:{{ health_score }}%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMI -->
+    <div class="col-md col-6">
+      <div class="card p-3 text-center">
+        <div class="metric-label">BMI</div>
+        <div class="metric-val">{{ bmi }}</div>
+        <span class="badge bg-secondary">{{ bmi_cat }}</span>
+      </div>
+    </div>
+
+    <!-- Calories -->
+    <div class="col-md col-6">
+      <div class="card p-3 text-center">
+        <div class="metric-label">Daily Calories</div>
+        <div class="metric-val">{{ calories }}</div>
+        <div style="font-size:0.78rem;color:#888">kcal/day · BMR: {{ bmr }}</div>
+      </div>
+    </div>
+
+    <!-- Water -->
+    <div class="col-md col-6">
+      <div class="card p-3 text-center">
+        <div class="metric-label">Water Intake</div>
+        <div class="metric-val">{{ water }}L</div>
+        <div style="font-size:0.78rem;color:#888">recommended/day</div>
+      </div>
+    </div>
+
+    <!-- Risk + Cluster -->
+    <div class="col-md col-6">
+      <div class="card p-3 text-center">
+        <div class="metric-label">Risk Level</div>
+        {% if "High" in risk %}
+          <span class="badge bg-danger fs-6 mt-1">{{ risk }}</span>
+        {% elif "Moderate" in risk %}
+          <span class="badge bg-warning text-dark fs-6 mt-1">{{ risk }}</span>
+        {% else %}
+          <span class="badge bg-success fs-6 mt-1">{{ risk }}</span>
+        {% endif %}
+        <div style="font-size:0.72rem;color:#888;margin-top:6px">
+          Cluster: {{ cluster }}<br>RF: {{ health_condition }}
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end row 1 -->
+
+  <!-- ── ROW 2: Charts ── -->
+  <div class="row g-3 mb-2">
+    <div class="col-md-5">
+      <div class="card p-3">
+        <h5>Macronutrient Breakdown</h5>
+        <canvas id="macroChart" height="210"></canvas>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card p-3">
+        <h5>Health Profile Overview</h5>
+        <canvas id="radarChart" height="210"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Diet Recommendations ── -->
+  <div class="card p-4">
+    <h4>🥗 Diet Recommendations
+      <small class="text-muted fs-6 fw-normal ms-2">
+        KNN — matched to your goal: <strong>{{ goal | capitalize }}</strong>
+      </small>
+    </h4>
+
+    {% for meal_type, foods in diet.items() %}
+    <div class="mb-3">
+      <div class="section-title mb-2">{{ meal_type }}</div>
+      <div class="row g-2">
+        {% for food in foods %}
+        <div class="col-md-4">
+          <div class="food-card">
+            <div class="food-name">{{ food.Food_Item }}</div>
+            <div class="food-macro">
+              🔥 {{ food.Calories }} kcal &nbsp;·&nbsp;
+              🥩 P: {{ food.Proteins }}g &nbsp;·&nbsp;
+              🍞 C: {{ food.Carbs }}g &nbsp;·&nbsp;
+              🧈 F: {{ food.Fats }}g
+            </div>
+            <div class="food-alt">Alternative: {{ food.Alternative }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- ── Feature 6: Calorie Gap ── -->
+    <div class="alert alert-{{ calorie_color }} mt-3 mb-0">
+      📊 <strong>Calorie Analysis:</strong> {{ calorie_msg }}
+      <span class="float-end text-muted" style="font-size:0.82rem">
+        Meal plan ≈ {{ plan_cals }} kcal · Daily target: {{ calories }} kcal
+      </span>
+    </div>
+  </div>
+
+  <!-- ── Feature 4: Workout Cards ── -->
+  <div class="card p-4">
+    <h4>🏋️ Workout Recommendation
+      <small class="text-muted fs-6 fw-normal ms-2">
+        Based on BMI ({{ bmi_cat_label }}) · {{ gender }}
+      </small>
+    </h4>
+    <p class="text-muted mb-3">{{ workout_tip }}</p>
+
+    <div class="row g-3">
+      {% for ex in exercises %}
+      <div class="col-md-4 col-sm-6">
+        <div class="workout-card">
+          <div class="workout-name">{{ ex.name }}</div>
+          <div class="workout-cal">{{ ex.calories }}</div>
+          <div class="workout-cal-lbl">avg kcal burned/session</div>
+          <div class="workout-freq">📅 {{ ex.freq }}× per week</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="alert alert-light mt-3 mb-0" style="font-size:0.85rem;color:#555">
+      💡 Workout style assigned: <strong>{{ workout_type }}</strong> —
+      exercises and calorie data sourced from Kaggle dataset (20,000 records).
+    </div>
+  </div>
+
+  <!-- ── Lifestyle Tips ── -->
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>😴 Sleep Tips</h5>
+        <p class="text-muted mb-2" style="font-size:0.83rem">
+          Your sleep: <strong>{{ sleep }} hrs/night</strong>
+        </p>
+        {% for tip in sleep_tips %}
+          <div class="tip-item">{{ tip }}</div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>🧘 Stress Management</h5>
+        <p class="text-muted mb-2" style="font-size:0.83rem">
+          Your stress: <strong>{{ stress }}/10</strong>
+        </p>
+        {% for tip in stress_tips %}
+          <div class="tip-item">{{ tip }}</div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>😊 Mood Tips — {{ mood | capitalize }}</h5>
+        {% for tip in mood_tips %}
+          <div class="tip-item">{{ tip }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Feature 5: Print / Save Button ── -->
+  <div class="text-center mt-4 mb-4 no-print">
+    <button onclick="window.print()" class="btn btn-outline-success btn-lg me-3">
+      🖨️ Print / Save as PDF
+    </button>
+    <a href="/" class="btn btn-success btn-lg">🔄 New Analysis</a>
+  </div>
+
+</div><!-- end container -->
+
+<script>
+// ── Macro Doughnut Chart ──
+new Chart(document.getElementById('macroChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Carbohydrates', 'Proteins', 'Fats'],
+    datasets: [{
+      data: [{{ avg_carbs }}, {{ avg_proteins }}, {{ avg_fats }}],
+      backgroundColor: ['#1a6b4a', '#52b788', '#b7e4c7'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutout: '60%',
+    plugins: {
+      legend: { position: 'bottom' },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.label}: ${ctx.raw}g avg`
+        }
+      }
+    }
+  }
+});
+
+// ── Radar Chart ──
+new Chart(document.getElementById('radarChart'), {
+  type: 'radar',
+  data: {
+    labels: ['Sleep Quality', 'Low Stress', 'BMI Health', 'Activity Level', 'Step Count'],
+    datasets: [{
+      label: '{{ name }}\'s Profile',
+      data: [
+        Math.min(Math.round({{ sleep }} / 9 * 100), 100),
+        Math.max(0, Math.round((10 - {{ stress }}) / 10 * 100)),
+        Math.max(0, Math.round(100 - Math.abs({{ bmi }} - 22) * 4)),
+        {{ health_score }},
+        Math.min(Math.round({{ steps }} / 10000 * 100), 100)
+      ],
+      backgroundColor: 'rgba(26,107,74,0.18)',
+      borderColor: '#1a6b4a',
+      pointBackgroundColor: '#1a6b4a',
+      pointBorderColor: '#fff',
+      pointRadius: 5
+    }]
+  },
+  options: {
+    scales: {
+      r: {
+        min: 0, max: 100,
+        ticks: { stepSize: 25, font: { size: 10 } },
+        pointLabels: { font: { size: 11 } }
+      }
+    },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+</script>
+</body>
+</html>
