@@ -1,0 +1,155 @@
+Meal_Type,Food_Item,Calories,Carbs,Proteins,Fats,Goal,Alternative
+Breakfast,Oatmeal with fruits,250,45,6,4,Lose,Multigrain toast with avocado
+Breakfast,Greek yogurt with berries,200,25,15,5,Lose,Boiled eggs with spinach
+Breakfast,Smoothie with banana and spinach,220,30,8,4,Lose,Vegetable upma
+Breakfast,Smoothie bowl,300,35,8,10,Maintain,Egg sandwich with whole wheat bread
+Breakfast,Muesli with milk and nuts,350,40,12,15,Maintain,Poha with peanuts
+Breakfast,Boiled eggs and toast,320,30,18,12,Maintain,Besan chilla
+Breakfast,Peanut butter toast & banana,450,50,12,20,Gain,Paneer paratha with curd
+Breakfast,Cheese omelet with toast,500,40,20,25,Gain,Banana milkshake and nuts
+Breakfast,Protein pancakes with syrup,550,60,20,18,Gain,Masala dosa with chutney
+Lunch,Grilled chicken salad,400,20,35,15,Lose,Quinoa salad with chickpeas
+Lunch,Vegetable stir fry with tofu,380,30,20,10,Lose,Brown rice and dal
+Lunch,Soup and whole grain bread,350,25,15,8,Lose,Stuffed roti with vegetables
+Lunch,Turkey sandwich with salad,500,45,30,20,Maintain,Rajma with rice
+Lunch,Chicken curry with roti,550,40,35,22,Maintain,Pulao with raita
+Lunch,Grilled fish with veggies,520,35,32,18,Maintain,Chole with chapati
+Lunch,Chicken rice bowl,650,60,40,25,Gain,Butter chicken with naan
+Lunch,Paneer butter masala with paratha,700,50,25,30,Gain,Egg curry with rice
+Lunch,Beef biryani,800,70,35,35,Gain,Fried rice with manchurian
+Dinner,Steamed veggies with tofu,350,30,20,10,Lose,Grilled fish with sautéed greens
+Dinner,Lentil soup with salad,300,25,18,8,Lose,Vegetable stew with brown rice
+Dinner,Zucchini noodles with tomato sauce,280,20,12,6,Lose,Sprouts and chapati
+Dinner,Grilled salmon with quinoa,500,40,35,20,Maintain,Mixed dal with jeera rice
+Dinner,Vegetable curry with chapati,480,35,20,18,Maintain,Kadhi with rice
+Dinner,Chicken stew with rice,510,45,28,22,Maintain,Paneer tikka with roti
+Dinner,Pasta with meatballs,700,65,35,30,Gain,Shahi paneer with naan
+Dinner,Biryani with chicken,750,70,40,32,Gain,Egg fried rice with salad
+Dinner,Rogan josh with rice,800,75,38,35,Gain,Chicken korma with paratha
+Breakfast,Semolina upma,313,44,10,35,Maintain,Fruit salad with nuts
+Lunch,Fried rice with chicken,460,58,12,11,Gain,Vegetable noodles
+Breakfast,Semolina upma,465,54,40,35,Maintain,Methi paratha
+Lunch,Mixed vegetable curry with roti,718,21,17,16,Maintain,Rajma chawal
+Dinner,Lentil curry with salad,458,34,18,13,Lose,Chicken kebab with rice
+Dinner,Chicken biryani,376,43,33,33,Gain,Mushroom curry
+Breakfast,Egg white omelet,756,23,37,7,Lose,Fruit salad with nuts
+Dinner,Lentil curry with salad,296,67,14,28,Lose,Chicken kebab with rice
+Breakfast,Low-fat milk with cereal,734,80,35,20,Lose,Banana pancakes
+Lunch,Grilled tofu with vegetables,438,25,40,16,Lose,Vegetable noodles
+Breakfast,Semolina upma,474,34,32,25,Maintain,Banana pancakes
+Dinner,Lentil curry with salad,357,24,11,13,Lose,Chicken kebab with rice
+Breakfast,Semolina upma,529,28,13,13,Maintain,Methi paratha
+Breakfast,Paneer sandwich,256,61,38,35,Gain,Banana pancakes
+Breakfast,Egg sandwich,332,22,18,22,Maintain,Banana pancakes
+Breakfast,Oats with chia seeds,454,79,29,33,Lose,Banana pancakes
+Lunch,Stuffed paratha with butter,646,73,21,30,Gain,Vegetable noodles
+Breakfast,Chocolate milkshake and nuts,452,74,17,20,Gain,Fruit salad with nuts
+Lunch,Cauliflower rice bowl,682,58,40,6,Lose,Vegetable noodles
+Lunch,Chicken wrap,436,64,13,19,Maintain,Vegetable noodles
+Dinner,Lentil curry with salad,619,65,12,15,Lose,Vegetable lasagna
+Dinner,Stuffed bell peppers,441,66,24,18,Lose,Vegetable lasagna
+Breakfast,Paratha with curd,595,69,37,28,Maintain,Fruit salad with nuts
+Breakfast,Oats with chia seeds,594,44,26,23,Lose,Fruit salad with nuts
+Breakfast,Ghee paratha with curd,405,79,37,35,Gain,Fruit salad with nuts
+Dinner,Vegetable khichdi,651,25,24,24,Maintain,Mushroom curry
+Lunch,Fried rice with chicken,422,68,38,15,Gain,Chicken shawarma
+Breakfast,Ghee paratha with curd,478,68,35,28,Gain,Banana pancakes
+Breakfast,Ghee paratha with curd,668,48,34,8,Gain,Banana pancakes
+Breakfast,Paneer sandwich,424,58,36,23,Gain,Banana pancakes
+Dinner,Butter paneer with naan,622,26,24,27,Gain,Chicken kebab with rice
+Lunch,Cauliflower rice bowl,275,28,32,27,Lose,Rajma chawal
+Lunch,Chicken wrap,266,64,10,22,Maintain,Rajma chawal
+Dinner,Vegetable khichdi,713,74,36,30,Maintain,Vegetable lasagna
+Dinner,Paneer sabzi with rice,546,77,37,17,Maintain,Vegetable lasagna
+Dinner,Dal makhani with jeera rice,398,76,35,20,Gain,Mushroom curry
+Breakfast,Paratha with curd,316,78,14,24,Maintain,Fruit salad with nuts
+Lunch,Grilled tofu with vegetables,503,45,29,29,Lose,Rajma chawal
+Dinner,Butter paneer with naan,326,46,20,29,Gain,Vegetable lasagna
+Lunch,Grilled tofu with vegetables,464,46,24,26,Lose,Vegetable noodles
+Dinner,Paneer sabzi with rice,499,20,35,14,Maintain,Vegetable lasagna
+Dinner,Egg curry with roti,511,33,28,8,Maintain,Mushroom curry
+Breakfast,Egg sandwich,469,80,38,29,Maintain,Methi paratha
+Lunch,Fried rice with chicken,381,74,37,22,Gain,Rajma chawal
+Lunch,Grilled tofu with vegetables,654,33,15,17,Lose,Chicken shawarma
+Breakfast,Egg white omelet,353,26,31,24,Lose,Methi paratha
+Dinner,Dal makhani with jeera rice,469,31,30,19,Gain,Vegetable lasagna
+Dinner,Vegetable soup,619,36,33,28,Lose,Vegetable lasagna
+Breakfast,Semolina upma,606,51,13,29,Maintain,Fruit salad with nuts
+Lunch,Stuffed paratha with butter,491,80,16,25,Gain,Rajma chawal
+Lunch,Low-calorie wrap,437,28,20,33,Lose,Chicken shawarma
+Breakfast,Paneer sandwich,592,61,32,15,Gain,Fruit salad with nuts
+Breakfast,Semolina upma,504,50,26,28,Maintain,Methi paratha
+Lunch,Lamb curry with rice,668,42,14,9,Gain,Chicken shawarma
+Lunch,Cauliflower rice bowl,644,30,37,6,Lose,Vegetable noodles
+Breakfast,Semolina upma,796,26,29,6,Maintain,Methi paratha
+Breakfast,Egg sandwich,612,34,34,12,Maintain,Methi paratha
+Breakfast,Egg sandwich,542,27,27,16,Maintain,Methi paratha
+Dinner,Egg curry with roti,776,32,38,12,Maintain,Vegetable lasagna
+Lunch,Stuffed paratha with butter,715,40,23,26,Gain,Vegetable noodles
+Lunch,Low-calorie wrap,506,76,27,21,Lose,Rajma chawal
+Lunch,Chicken wrap,511,22,32,16,Maintain,Vegetable noodles
+Dinner,Vegetable soup,272,76,13,19,Lose,Mushroom curry
+Breakfast,Egg sandwich,751,43,15,21,Maintain,Fruit salad with nuts
+Lunch,Grilled tofu with vegetables,407,42,37,31,Lose,Chicken shawarma
+Breakfast,Oats with chia seeds,743,56,31,25,Lose,Methi paratha
+Dinner,Dal makhani with jeera rice,309,44,33,34,Gain,Vegetable lasagna
+Lunch,Chicken wrap,299,57,18,22,Maintain,Rajma chawal
+Breakfast,Chocolate milkshake and nuts,426,66,22,7,Gain,Fruit salad with nuts
+Lunch,Lamb curry with rice,365,62,32,28,Gain,Chicken shawarma
+Breakfast,Paratha with curd,520,74,20,15,Maintain,Methi paratha
+Dinner,Dal makhani with jeera rice,408,67,21,30,Gain,Chicken kebab with rice
+Breakfast,Chocolate milkshake and nuts,455,41,24,32,Gain,Banana pancakes
+Dinner,Egg curry with roti,728,66,25,22,Maintain,Vegetable lasagna
+Dinner,Lentil curry with salad,457,42,26,21,Lose,Mushroom curry
+Breakfast,Egg white omelet,742,39,20,22,Lose,Banana pancakes
+Dinner,Dal makhani with jeera rice,576,65,39,31,Gain,Vegetable lasagna
+Breakfast,Low-fat milk with cereal,472,28,39,9,Lose,Banana pancakes
+Dinner,Dal makhani with jeera rice,547,40,31,11,Gain,Chicken kebab with rice
+Dinner,Vegetable soup,528,39,39,19,Lose,Vegetable lasagna
+Lunch,Fish curry with rice,270,44,17,8,Maintain,Vegetable noodles
+Breakfast,Semolina upma,757,63,34,10,Maintain,Methi paratha
+Lunch,Chicken wrap,398,69,25,26,Maintain,Vegetable noodles
+Breakfast,Paratha with curd,645,57,38,18,Maintain,Fruit salad with nuts
+Lunch,Chicken wrap,612,41,37,16,Maintain,Chicken shawarma
+Breakfast,Paratha with curd,677,58,39,28,Maintain,Fruit salad with nuts
+Lunch,Fish curry with rice,626,75,40,18,Maintain,Rajma chawal
+Dinner,Lentil curry with salad,482,77,28,10,Lose,Chicken kebab with rice
+Dinner,Chicken biryani,348,42,18,28,Gain,Mushroom curry
+Breakfast,Semolina upma,290,76,16,32,Maintain,Banana pancakes
+Breakfast,Paneer sandwich,448,46,15,25,Gain,Methi paratha
+Breakfast,Paratha with curd,657,52,31,8,Maintain,Banana pancakes
+Lunch,Fish curry with rice,583,79,16,9,Maintain,Rajma chawal
+Lunch,Lamb curry with rice,295,46,16,25,Gain,Chicken shawarma
+Breakfast,Egg sandwich,496,64,36,32,Maintain,Fruit salad with nuts
+Lunch,Lamb curry with rice,300,42,25,17,Gain,Vegetable noodles
+Breakfast,Egg white omelet,387,56,26,35,Lose,Fruit salad with nuts
+Lunch,Fish curry with rice,769,78,17,5,Maintain,Chicken shawarma
+Dinner,Lentil curry with salad,674,51,11,11,Lose,Vegetable lasagna
+Lunch,Lamb curry with rice,783,42,11,11,Gain,Chicken shawarma
+Breakfast,Low-fat yogurt with granola,180,22,12,5,Lose,Boiled egg with whole wheat toast
+Breakfast,Vegetable oats,210,30,6,4,Lose,Moong dal chilla
+Breakfast,Apple slices with peanut butter,190,25,4,8,Lose,Cucumber sandwich on brown bread
+Breakfast,Scrambled eggs with toast,320,30,18,15,Maintain,Idli with sambar
+Breakfast,Vegetable poha,280,35,6,10,Maintain,Cheese toast with tomato
+Breakfast,Whole wheat pancakes,350,40,8,12,Maintain,Paneer sandwich
+Breakfast,Egg bhurji with paratha,500,45,22,25,Gain,Banana with peanut butter smoothie
+Breakfast,Sweet potato with butter,470,60,6,20,Gain,Almond milk oats with honey
+Breakfast,Stuffed aloo paratha with curd,550,55,10,22,Gain,Besan chilla with chutney
+Lunch,Mixed veg curry with roti,380,30,12,10,Lose,Quinoa with sautéed vegetables
+Lunch,Spinach dal with brown rice,360,35,18,6,Lose,Tofu bhurji with salad
+Lunch,Grilled paneer salad,390,25,20,12,Lose,Bajra roti with lauki sabzi
+Lunch,Sambar with rice,450,50,18,10,Maintain,Chicken curry with chapati
+Lunch,Masoor dal with rice,460,40,20,12,Maintain,Rajma with jeera rice
+Lunch,Vegetable pulao,500,55,12,14,Maintain,Fish curry with rice
+Lunch,Mutton curry with paratha,720,50,30,35,Gain,Kadhi pakora with rice
+Lunch,Shahi paneer with naan,780,60,25,40,Gain,Butter chicken with basmati rice
+Lunch,Chole bhature,750,65,22,38,Gain,Aloo matar with puri
+Dinner,Palak soup with multigrain toast,300,20,15,8,Lose,Vegetable khichdi
+Dinner,Zucchini stir fry with tofu,320,25,18,9,Lose,Oats upma
+Dinner,Lauki curry with chapati,310,28,10,7,Lose,Vegetable dalia
+Dinner,Paneer curry with roti,480,35,22,18,Maintain,Mix veg with phulka
+Dinner,Chicken stew with vegetables,510,40,28,20,Maintain,Vegetable biryani with raita
+Dinner,Egg curry with rice,520,38,24,22,Maintain,Lentil soup with bread
+Dinner,Keema with paratha,800,65,35,38,Gain,Paneer butter masala with jeera rice
+Dinner,Fried fish with pulao,760,60,30,35,Gain,Chicken fried rice
+Dinner,Egg masala with naan,730,58,28,34,Gain,Rajma curry with puri
